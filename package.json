@@ -1,0 +1,20 @@
+{
+    "name"         : "level-bot"
+  , "version"      : "0.0.0"
+  , "description"  : "A bot for ##leveldb on freenode"
+  , "main"         : "./level-bot.js"
+  , "repository"   : ""
+  , "authors"      : [
+        "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)"
+    ]
+  , "repository"   : {
+        "type"               : "git"
+      , "url"                : "https://github.com/rvagg/level-bot.git"
+    }
+  , "license"      : "MIT"
+  , "dependencies" : {
+        "npm-publish-stream" : "0.0.0"
+      , "jerk"               : "~1.1.23"
+    }
+  , "private": true
+}
