@@ -26,6 +26,8 @@ function setup () {
             + data.id + '@' + data.doc['dist-tags'].latest
             + ' <http://npm.im/' + data.id + '>: '
             + (data.doc.description || '')
+            + ' (' + data.doc.versions[data.doc['dist-tags'].latest].maintainers
+                      .map(function (m) { return '@' + m.name }).join(', ') + ')'
       )
     })
     .on('error', console.log)
