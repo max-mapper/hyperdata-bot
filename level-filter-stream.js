@@ -49,5 +49,5 @@ LevelFilterStream.prototype._transform = function(chunk, encoding, callback) {
   callback()
 }
 
-module.exports = LevelFilterStream
+module.exports           = LevelFilterStream
 module.exports.isLevelDB = isLevelDB

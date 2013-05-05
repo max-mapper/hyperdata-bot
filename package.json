@@ -13,8 +13,8 @@
     }
   , "license"      : "MIT"
   , "dependencies" : {
-        "npm-publish-stream" : "0.0.0"
-      , "jerk"               : "~1.1.23"
+        "npm-publish-stream" : "*"
+      , "jerk"               : "*"
     }
   , "scripts": {
         "test"            : "node ./test.js"
