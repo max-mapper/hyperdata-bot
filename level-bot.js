@@ -13,9 +13,12 @@ const NpmPublishStream  = require('npm-publish-stream')
 */
 
 var bot
+  , streaming = false
 
 function setup () {
   bot.say('NickServ', 'identify ' + options.password)
+
+  if (streaming) return
 
   new NpmPublishStream({ startTime: new Date(Date.now() - 1000 * 60 * 60 * 1) })
     .pipe(new LevelFilterStream())
@@ -31,6 +34,8 @@ function setup () {
       )
     })
     .on('error', console.log)
+
+  streaming = true
 }
 
 options.onConnect = function () { setTimeout(setup, 5000) }
