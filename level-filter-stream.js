@@ -1,5 +1,6 @@
-const TransformStream  = require('stream').Transform
-    , inherits         = require('util').inherits
+const TransformStream = require('stream').Transform
+    , inherits        = require('util').inherits
+    , levelDeps       = [ 'levelup', 'leveldown', 'level.js', 'abstract-leveldown', 'level' ]
 
 function inArray (arr, test) {
   var i = 0
@@ -29,9 +30,7 @@ function isLevelDB (pkg) {
   if (inArray(pkg.versions[v].keywords, (/level(up|down|db|\.?js)/g)))
     return true
 
-  if (inArray(
-        Object.keys(pkg.versions[v].dependencies || {})
-      , [ 'levelup', 'leveldown', 'level.js', 'abstract-leveldown' ]))
+  if (inArray(Object.keys(pkg.versions[v].dependencies || {}), levelDeps))
     return true
 
   return false
