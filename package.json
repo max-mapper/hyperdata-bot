@@ -1,6 +1,6 @@
 {
     "name"         : "level-bot"
-  , "version"      : "0.0.1"
+  , "version"      : "0.0.2"
   , "description"  : "A bot for ##leveldb on freenode"
   , "main"         : "./level-bot.js"
   , "repository"   : ""
@@ -13,7 +13,7 @@
     }
   , "license"      : "MIT"
   , "dependencies" : {
-        "npm-publish-stream" : "~0.2.0"
+        "npm-publish-stream" : "~0.3.1"
       , "jerk"               : "*"
     }
   , "scripts": {

@@ -25,6 +25,7 @@ function setup () {
   if (streaming) return
 
   new NpmPublishStream({ startTime: new Date(Date.now() - 1000 * 60 * 60 * 1) })
+    .on('error', console.error)
     .pipe(new LevelFilterStream())
     .on('data', function (data) {
       bot.say(
@@ -37,7 +38,6 @@ function setup () {
                       .map(function (m) { return '@' + m.name }).join(', ') + ')'
       )
     })
-    .on('error', console.log)
 
   streaming = true
 }
