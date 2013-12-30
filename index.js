@@ -2,8 +2,8 @@ const NpmPublishStream  = require('npm-publish-stream')
     , jerk              = require('jerk')
     , fs                = require('fs')
     , path              = require('path')
-    , FilterStream = require('./filter-stream')
-    , options           = require('./options')
+    , FilterStream      = require(path.join(__dirname, 'filter-stream.js'))
+    , options           = require(path.join(__dirname, 'options.json'))
 
     , dataStore         = path.join(process.env.HOME, '.hyperdatabot.json')
 
