@@ -1,3 +1,6 @@
+var port = process.env.PORT || 8080
+var http = require('http').createServer(function(req, res) { res.end('hello!') }).listen(port)
+
 const NpmPublishStream  = require('npm-publish-stream')
     , jerk              = require('jerk')
     , fs                = require('fs')
