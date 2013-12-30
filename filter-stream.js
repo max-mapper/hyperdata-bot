@@ -24,7 +24,10 @@ function matches (pkg) {
 
   if (pkg.name && matchRe.test(pkg.name.replace(stripRe, '')))
     return true
-
+    
+  if (pkg.description && matchRe.test(pkg.description.replace(stripRe, '')))
+    return true
+  
   var v = pkg['dist-tags'] && pkg['dist-tags'].latest
 
   if (!v || !pkg.versions || !pkg.versions[v])

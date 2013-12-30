@@ -8,5 +8,5 @@ assert(matches({ name: 'data-package-thing' }))
 assert(matches({ name: 'some-datapackage' }))
 assert(matches({ name: 'dpm-thingy' }))
 assert(matches({ name: 'hyperdata' }))
-
+assert(matches({ description: 'a hyperdata module' }))
 assert(!matches({ name: 'pizza' }))
