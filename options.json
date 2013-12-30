@@ -1,0 +1,6 @@
+{
+    "server"     : "irc.freenode.net"
+  , "nick"       : "hyperdata-bot"
+  , "channels"   : [ "#hyperdata" ]
+  , "password"   : "<some password>"
+}
