@@ -16,7 +16,8 @@
       , "jerk"               : "*"
     }
   , "scripts": {
-        "test"            : "node ./test.js"
+        "test"            : "node ./test.js",
+        "start"           : "node index.js"
     }
   , "private": true
 }
