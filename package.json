@@ -1,8 +1,7 @@
 {
-    "name"         : "level-bot"
+    "name"         : "hyperdata-bot"
   , "version"      : "0.0.3"
-  , "description"  : "A bot for ##leveldb on freenode"
-  , "main"         : "./level-bot.js"
+  , "description"  : "A bot for #hyperdata on freenode"
   , "repository"   : ""
   , "authors"      : [
         "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)"

@@ -2,10 +2,10 @@ const NpmPublishStream  = require('npm-publish-stream')
     , jerk              = require('jerk')
     , fs                = require('fs')
     , path              = require('path')
-    , LevelFilterStream = require('./level-filter-stream')
+    , FilterStream = require('./filter-stream')
     , options           = require('./options')
 
-    , dataStore         = path.join(process.env.HOME, '.levelbot.json')
+    , dataStore         = path.join(process.env.HOME, '.hyperdatabot.json')
 
 /* options.json needs to be like this:
 {
@@ -20,13 +20,13 @@ var bot
   , streaming = false
 
 function setup () {
-  bot.say('NickServ', 'identify ' + options.password)
+  // bot.say('NickServ', 'identify ' + options.password)
 
   if (streaming) return
 
   new NpmPublishStream({ startTime: new Date(Date.now() - 1000 * 60 * 60 * 1) })
     .on('error', console.error)
-    .pipe(new LevelFilterStream())
+    .pipe(new FilterStream())
     .on('data', function (data) {
       bot.say(
           options.channels[0]
@@ -58,7 +58,7 @@ function redirectUser (channel, user) {
   bot.say(
       channel
     ,   user
-      + ': not much happening in here, /join ##leveldb, that\'s where the action is!'
+      + ': not much happening in here, /join #hyperdata, that\'s where the action is!'
   )
   data.redirectedUsers.push(user)
 

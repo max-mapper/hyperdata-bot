@@ -1,6 +1,8 @@
-# Levelbot
+# hyperdatabot
 
-An [npm publish stream](https://github.com/rvagg/node-npm-publish-stream) bot for ##leveldb on Freenode
+An [npm publish stream](https://github.com/rvagg/node-npm-publish-stream) bot for #hyperdata on Freenode
+
+Forked from [levelbot](https://github.com/rvagg/level-bot)
 
 ## Licence
 

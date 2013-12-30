@@ -1,9 +1,9 @@
 const TransformStream = require('stream').Transform
     , inherits        = require('util').inherits
-    , levelDeps       = [ 'levelup', 'leveldown', 'level.js', 'abstract-leveldown', 'level' ]
+    , levelDeps       = [ 'dat', 'dpm']
 
-    , stripRe         = /(high|low)[\- ]?level/gi
-    , matchRe         = /level(-|up|down|db|\.?js)/i
+    , stripRe         = /^&/i
+    , matchRe         = /(data(\s|-)?package|dpm|hyperdata)/i
 
 function inArray (arr, test, strip) {
   var i = 0
@@ -18,7 +18,7 @@ function inArray (arr, test, strip) {
   return false
 }
 
-function isLevelDB (pkg) {
+function matches (pkg) {
   if (!pkg)
     return false
 
@@ -46,10 +46,10 @@ function LevelFilterStream() {
 inherits(LevelFilterStream, TransformStream)
 
 LevelFilterStream.prototype._transform = function(chunk, encoding, callback) {
-  if (isLevelDB(chunk.doc))
+  if (matches(chunk.doc))
     this.push(chunk)
   callback()
 }
 
 module.exports           = LevelFilterStream
-module.exports.isLevelDB = isLevelDB
+module.exports.matches = matches
